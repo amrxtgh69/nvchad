@@ -37,10 +37,11 @@ nomap("n", "<C-n>")
 map("n", "<leader><space>", "<cmd>Telescope buffers<CR>", { desc = "View buffers" })
 map(
   "n",
-  "<leader>fd",
+  "<leader>fg",
   "<cmd>lua require('telescope.builtin').live_grep{ search_dirs={'%:p'} }<CR>",
   { desc = "Grep in current buffer" }
 )
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 
 -- map("n", "<leader>k", function()
 --   local ok, start = require("indent_blankline.utils").get_current_context(

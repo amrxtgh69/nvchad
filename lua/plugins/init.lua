@@ -6,7 +6,17 @@ return {
     opts = require "configs.conform",
   },
 
-  -- test new blink
+  {
+    "kdheepak/lazygit.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function ()
+      vim.g.lazygit_floating_window_scaling_factor = 0.9
+    end,
+  },
+  --test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
   -- {
@@ -113,12 +123,13 @@ return {
   --   end,
   --   ft = { "markdown" },
   -- },
-  {
-    "lervag/vimtex",
-    init = function()
-      vim.g.vimtex_view_method = "zathura"
-    end,
-  },
+--  {
+--    "lervag/vimtex",
+--    init = function()
+--      vim.g.vimtex_view_method = "zathura"
+--    end,
+--  },
+--
   {
     "toppair/peek.nvim",
     event = { "VeryLazy" },
