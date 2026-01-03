@@ -67,13 +67,13 @@ map("n", "<leader>cr", function()
 end, { desc = "Rustc compile and run" })
 
 -- 🐍 Python run
-map("n", "<leader>bl", function()
+map("n", "<leader>pc", function()
   local file_path = vim.fn.expand "%"
   require("nvterm.terminal").send("python3 " .. file_path, "horizontal")
 end, { desc = "Run python file in terminal" })
 
 -- 🛠 C++ compile + run
-map("n", "<leader>gc", function()
+map("n", "<leader>gp", function()
   local file_path = vim.fn.expand "%"
   local filename = vim.fn.expand("%:t"):match "^([^.]+)" .. ".out"
   require("nvterm.terminal").send(
@@ -91,4 +91,5 @@ map("n", "<leader>gc", function()
     "horizontal"
   )
 end, { desc = "GCC compile and run" })
+
 
