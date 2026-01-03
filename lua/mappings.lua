@@ -66,12 +66,6 @@ map("n", "<leader>cr", function()
   require("nvterm.terminal").send("clear && rustc " .. file_path .. " && ./" .. filename, "vertical")
 end, { desc = "Rustc compile and run" })
 
-
--- use latexmkd to compile latex document to pdf
-map("n","<leader>lx","<cmd>!latexmk -pdf " .. vim.fn.expand "%".. "2>&1 > /dev/null" .. "<CR>",
-  {desc = "Compile latex document into pdf"}
-)
-
 -- 🐍 Python run
 map("n", "<leader>bl", function()
   local file_path = vim.fn.expand "%"
@@ -87,3 +81,14 @@ map("n", "<leader>gc", function()
     "vertical"
   )
 end, { desc = "G++ compile and run" })
+
+-- 🧱 C compile + run
+map("n", "<leader>cc", function()
+  local file_path = vim.fn.expand "%"
+  local filename = vim.fn.expand("%:t:r") .. ".out"
+  require("nvterm.terminal").send(
+    "clear && gcc -Wall -Wextra '" .. file_path .. "' -o " .. filename .. " && ./" .. filename,
+    "vertical"
+  )
+end, { desc = "GCC compile and run" })
+
