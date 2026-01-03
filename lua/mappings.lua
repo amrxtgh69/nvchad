@@ -92,3 +92,6 @@ map("n", "<leader>gc", function()
   )
 end, { desc = "GCC compile and run" })
 
+map("n", "<leader>tx", function()
+  require("nvterm.terminal").close_all()
+end, { desc = "Close all terminals" })
