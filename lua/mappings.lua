@@ -83,7 +83,7 @@ map("n", "<leader>gc", function()
 end, { desc = "G++ compile and run" })
 
 -- 🧱 C compile + run
-map("n", "<leader>cc", function()
+map("n", "<leader>gc", function()
   local file_path = vim.fn.expand "%"
   local filename = vim.fn.expand("%:t:r") .. ".out"
   require("nvterm.terminal").send(
