@@ -56,14 +56,14 @@ map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 
 -- 🚀 Cargo run project
 map("n", "<leader>cc", function()
-  require("nvterm.terminal").send("cargo run", "vertical")
+  require("nvterm.terminal").send("cargo run", "horizontal")
 end, { desc = "Cargo run in vertical terminal" })
 
 -- 🦀 Rustc compile + run
 map("n", "<leader>cr", function()
   local file_path = vim.fn.expand "%"
   local filename = vim.fn.expand("%:t"):match "^([^.]+)"
-  require("nvterm.terminal").send("clear && rustc " .. file_path .. " && ./" .. filename, "vertical")
+  require("nvterm.terminal").send("clear && rustc " .. file_path .. " && ./" .. filename, "horizontal")
 end, { desc = "Rustc compile and run" })
 
 -- 🐍 Python run
@@ -78,7 +78,7 @@ map("n", "<leader>gc", function()
   local filename = vim.fn.expand("%:t"):match "^([^.]+)" .. ".out"
   require("nvterm.terminal").send(
     "clear && g++ -o " .. filename .. " '" .. file_path .. "' && ./" .. filename,
-    "vertical"
+    "horizontal"
   )
 end, { desc = "G++ compile and run" })
 
@@ -88,7 +88,7 @@ map("n", "<leader>gc", function()
   local filename = vim.fn.expand("%:t:r") .. ".out"
   require("nvterm.terminal").send(
     "clear && gcc -Wall -Wextra '" .. file_path .. "' -o " .. filename .. " && ./" .. filename,
-    "vertical"
+    "horizontal"
   )
 end, { desc = "GCC compile and run" })
 
