@@ -5,5 +5,5 @@ clone the repo and run this command
 chmod +x ~/nvchad/scripts/setup.sh
 scripts/setup.sh
 ```
-
+this is the current config im using
 and u are good to go !
