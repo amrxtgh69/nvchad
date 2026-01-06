@@ -2,7 +2,7 @@ require "nvchad.mappings"
 
 -- add yours here
 
-map = vim.keymap.set
+local map = vim.keymap.set
 local nomap = vim.keymap.del
 
 -- ❌ Disable bad defaults
