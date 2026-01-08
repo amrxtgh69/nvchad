@@ -7,3 +7,5 @@ scripts/setup.sh
 ```
 this is the current config im using for my neovim and once you run setup.
 and u are good to go !
+
+# I need to do some changes btw
