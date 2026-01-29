@@ -92,4 +92,13 @@ map("n", "<leader>gc", function()
   )
 end, { desc = "GCC compile and run" })
 
+-- 📝 Markdown preview with mdcat
+map("n", "<leader>mo", function()
+  require("configs.mdcat").open()
+end, { desc = "Markdown mdcat preview" })
+
+map("n", "<leader>mr", function()
+  require("configs.mdcat").refresh()
+end, { desc = "Markdown mdcat refresh" })
+
 
