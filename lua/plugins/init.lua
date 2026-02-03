@@ -130,13 +130,13 @@ return {
 --    end,
 --  },
 --
-  {
-    "toppair/peek.nvim",
-    event = { "VeryLazy" },
-    build = "deno task --quiet build:fast",
-    ft = "md",
-    config = function()
-      require "configs.peek"
-    end,
-  },
+--  {
+--    "toppair/peek.nvim",
+--    event = { "VeryLazy" },
+--    build = "deno task --quiet build:fast",
+--    ft = "md",
+--    config = function()
+--      require "configs.peek"
+--    end,
+--  },
 }
