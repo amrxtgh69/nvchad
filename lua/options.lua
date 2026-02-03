@@ -49,7 +49,7 @@ if g.neovide then -- only run the following command if neovide exists
 
   -- g.neovide_cursor_animate_command_line = false
 
-  g.neovide_transparency = 0.9
+  g.neovide_opacity = 0.9
   g.neovide_padding_bottom = 0
   g.neovide_padding_top = 0
   g.neovide_padding_right = 0
@@ -71,7 +71,7 @@ if g.neovide then -- only run the following command if neovide exists
 
   g.neovide_cursor_vfx_opacity = 200.0
 
-  g.neovide_cursor_vfx_mode = "railgun"
+  --g.neovide_cursor_vfx_mode = "railgun"
 
   g.neovide_scroll_animation_length = 0.3
 
