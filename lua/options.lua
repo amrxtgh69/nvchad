@@ -67,7 +67,7 @@ if g.neovide then -- only run the following command if neovide exists
 
   g.neovide_cursor_animation_length = 0.1
 
-  g.neovide_cursor_trail_size = 0.1
+  g.neovide_cursor_trail_size = 0.2
 
   g.neovide_cursor_vfx_opacity = 200.0
 
