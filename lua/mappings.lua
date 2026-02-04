@@ -23,6 +23,11 @@ map("v", "<leader>d", [["_d]], { desc = "Delete without yanking (visual)" })
 
 map("x", "<leader>p", [["_dP]], { desc = "Paste over without losing clipboard" })
 
+map({ "n", "v" }, "<C-S-c>", [["+y]], { desc = "Copy to system clipboard (Ctrl+Shift+C)" })
+map("n", "<C-S-v>", [["+p]], { desc = "Paste from system clipboard (Ctrl+Shift+V)" })
+map("v", "<C-S-v>", '"_d"+P', { desc = "Paste from system clipboard without losing it (Ctrl+Shift+V)" })
+map("i", "<C-S-v>", "<C-r>+", { desc = "Paste from system clipboard in insert mode (Ctrl+Shift+V)" })
+
 
 map("n", "<leader>cx", "<cmd>!chmod +x %<cr>", { desc = "Make current file executable", silent = true })
 
@@ -91,5 +96,3 @@ map("n", "<leader>gc", function()
     "horizontal"
   )
 end, { desc = "GCC compile and run" })
-
-
