@@ -8,19 +8,21 @@ local nomap = vim.keymap.del
 -- ❌ Disable bad defaults
 map("n", "Q", "<nop>", { desc = "Disable Ex mode" })
 
--- 📑 General normal mode mappings
+-- 🧭 Navigation + view
 map("n", "<Tab>", "<cmd>:bn<cr>", { desc = "Goto next buffer" })
 map("n", "<S-Tab>", "<cmd>:bp<cr>", { desc = "Goto previous buffer" })
 
 map("n", "n", "nzzzv", { desc = "Next search result centered" })
 map("n", "N", "Nzzzv", { desc = "Previous search result centered" })
 
+map("n", "<C-u>", "<C-u>zz", { desc = "Move half page up and center" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Move half page down and center" })
+
+-- 🧰 Clipboard + delete
 map("n", "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
-map("n", "<leader>d", [["_d]], { desc = "Delete without yanking" })
-
 map("v", "<leader>y", [["+y]], { desc = "Yank to system clipboard (visual)" })
+map("n", "<leader>d", [["_d]], { desc = "Delete without yanking" })
 map("v", "<leader>d", [["_d]], { desc = "Delete without yanking (visual)" })
-
 map("x", "<leader>p", [["_dP]], { desc = "Paste over without losing clipboard" })
 
 map({ "n", "v" }, "<C-S-c>", [["+y]], { desc = "Copy to system clipboard (Ctrl+Shift+C)" })
@@ -28,17 +30,16 @@ map("n", "<C-S-v>", [["+p]], { desc = "Paste from system clipboard (Ctrl+Shift+V
 map("v", "<C-S-v>", '"_d"+P', { desc = "Paste from system clipboard without losing it (Ctrl+Shift+V)" })
 map("i", "<C-S-v>", "<C-r>+", { desc = "Paste from system clipboard in insert mode (Ctrl+Shift+V)" })
 
-
-map("n", "<leader>cx", "<cmd>!chmod +x %<cr>", { desc = "Make current file executable", silent = true })
-
-map("n", "<C-u>", "<C-u>zz", { desc = "Move half page up and center" })
-map("n", "<C-d>", "<C-d>zz", { desc = "Move half page down and center" })
-
+-- 🪟 Windows + splits
 map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 
+-- 📁 Files + tree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
 nomap("n", "<C-n>")
 
+map("n", "<leader>cx", "<cmd>!chmod +x %<cr>", { desc = "Make current file executable", silent = true })
+
+-- 🔭 Telescope
 map("n", "<leader><space>", "<cmd>Telescope buffers<CR>", { desc = "View buffers" })
 map(
   "n",
@@ -46,6 +47,8 @@ map(
   "<cmd>lua require('telescope.builtin').live_grep{ search_dirs={'%:p'} }<CR>",
   { desc = "Grep in current buffer" }
 )
+
+-- 🧾 Git
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 
 -- map("n", "<leader>k", function()
@@ -62,7 +65,7 @@ map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 -- 🚀 Cargo run project
 map("n", "<leader>cc", function()
   require("nvterm.terminal").send("cargo run", "horizontal")
-end, { desc = "Cargo run in vertical terminal" })
+end, { desc = "Cargo run in horizontal terminal" })
 
 -- 🦀 Rustc compile + run
 map("n", "<leader>cr", function()
