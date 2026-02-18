@@ -4,13 +4,13 @@
 local options = {
 
   base46 = {
-    theme = "aquarium", -- default theme
+    theme = "rosepine", -- default theme
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "aquarium", "one_light" },
+    theme_toggle = { "rosepine", "one_light" },
   },
 
   ui = {
@@ -81,7 +81,7 @@ local options = {
 
   term = {
     base46_colors = true,
-    winopts = { number = true, relativenumber = true },
+    winopts = { number = true, relativenumber = false },
     sizes = { sp = 0.3, vsp = 0.45, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
     float = {
       relative = "editor",
