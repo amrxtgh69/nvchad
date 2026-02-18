@@ -7,7 +7,7 @@ local g = vim.g
 
 -- for numbers
 opt.nu = true
-opt.rnu = true
+opt.rnu = false
 opt.wrap = false
 opt.clipboard = "unnamedplus"
 opt.iskeyword:append("-", "_")
@@ -65,9 +65,9 @@ if g.neovide then -- only run the following command if neovide exists
 
   g.neovide_refresh_rate = 60
 
-  g.neovide_cursor_animation_length = 0.1
+  g.neovide_cursor_animation_length = 0.2
 
-  g.neovide_cursor_trail_size = 0.2
+  g.neovide_cursor_trail_size = 0.5
 
   g.neovide_cursor_vfx_opacity = 200.0
 
