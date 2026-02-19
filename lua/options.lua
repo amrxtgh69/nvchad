@@ -46,30 +46,29 @@ if g.neovide then -- only run the following command if neovide exists
   opt.guifont = "JetBrainsMono Nerd Font Mono:h14"
 
   g.neovide_cursor_antialiasing = true
-
   -- g.neovide_cursor_animate_command_line = false
 
-  g.neovide_opacity = 0.9
-  g.neovide_padding_bottom = 0
-  g.neovide_padding_top = 0
-  g.neovide_padding_right = 0
-  g.neovide_padding_left = 0
+  g.neovide_opacity = 0.95
+  g.neovide_padding_bottom = 4
+  g.neovide_padding_top = 4
+  g.neovide_padding_right = 4
+  g.neovide_padding_left = 4
 
   g.neovide_confirm_quit = true
 
   g.neovide_fullscreen = true
 
   g.neovide_remember_window_size = true
-
-  g.neovide_scale_factor = 0.8
-
   g.neovide_refresh_rate = 60
+
+  g.neovide_scale_factor = 1.0
+
 
   g.neovide_cursor_animation_length = 0.2
 
   g.neovide_cursor_trail_size = 0.4
 
-  g.neovide_cursor_vfx_opacity = 200.0
+  --g.neovide_cursor_vfx_opacity = 200.0
 
   --g.neovide_cursor_vfx_mode = "railgun"
 
