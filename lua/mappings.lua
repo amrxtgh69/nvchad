@@ -31,7 +31,7 @@ map("v", "<C-S-v>", '"_d"+P', { desc = "Paste from system clipboard without losi
 map("i", "<C-S-v>", "<C-r>+", { desc = "Paste from system clipboard in insert mode (Ctrl+Shift+V)" })
 
 -- Windows + splits
-map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+map("n", "<leader>sd", "<C-w>v", { desc = "Split window vertically" })
 
 -- Files + tree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
