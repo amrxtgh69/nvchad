@@ -48,6 +48,7 @@ map(
   "<cmd>lua require('telescope.builtin').live_grep{ search_dirs={'%:p'} }<CR>",
   { desc = "Grep in current buffer" }
 )
+map("n", "<leader>fd", "<cmd>Telescope live_grep<CR>", { desc = "Grep in project folder" })
 
 -- Git
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
