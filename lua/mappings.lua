@@ -32,6 +32,7 @@ map("i", "<C-S-v>", "<C-r>+", { desc = "Paste from system clipboard in insert mo
 
 -- Windows + splits
 map("n", "<leader>sd", "<C-w>v", { desc = "Split window vertically" })
+map("n", "<leader>st", "<cmd>vsplit | terminal<cr>", { desc = "Open terminal in vertical split" })
 
 -- Files + tree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
