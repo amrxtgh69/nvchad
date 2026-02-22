@@ -1,150 +1,121 @@
-# My NvChad Configuration
+# NvChad Configuration
 
-A personal Neovim configuration built on [NvChad](https://github.com/NvChad/NvChad), tailored for efficient coding with a clean interface and powerful shortcuts.
+Personal Neovim config built on [NvChad](https://github.com/NvChad/NvChad).
 
-![Neovim](https://img.shields.io/badge/Neovim-0.10+-green?style=flat-square&logo=neovim)
-![Lua](https://img.shields.io/badge/Lua-5.4-blue?style=flat-square&logo=lua)
+## Keybindings
 
-## Features
+### Navigation
+| Key | Action |
+|-----|--------|
+| `Tab` / `Shift+Tab` | Next/previous buffer |
+| `s` / `S` | Hop forward/backward to character |
+| `t` / `T` | Hop till character (before/after cursor) |
+| `n` / `N` | Next/prev search result (centered) |
+| `Ctrl+u` / `Ctrl+d` | Half page up/down (centered) |
 
-### Theme & UI
-- **Theme**: `ashes` (default) with `one_light` toggle
-- **Statusline**: VSCode colored theme with block separators
-- ** Telescope**: Borderless style
-- **Transparency**: Subtle transparency effects (Neovide)
-
-### Key Plugins
-| Plugin | Purpose |
-|--------|---------|
-| [nvterm](https://github.com/zbirenbaum/nvterm) | Integrated terminal |
-| [harpoon](https://github.com/ThePrimeagen/harpoon) | Quick file switching |
-| [hop.nvim](https://github.com/phaazon/hop.nvim) | Quick navigation (`s` key) |
-| [conform.nvim](https://github.com/stevearc/conform.nvim) | Code formatting |
-| [undotree](https://github.com/mbbill/undotree) | Visual undo history |
-| [peek.nvim](https://github.com/toppair/peek.nvim) | Markdown preview |
-
-### Development Shortcuts
-
-| Keybinding | Action |
-|------------|--------|
-| `<leader>cc` | Run Cargo project (Rust) |
-| `<leader>cr` | Compile & run Rust file |
-| `<leader>pc` | Run Python file |
-| `<leader>gp` | Compile & run C++ file |
-| `<leader>gc` | Compile & run C file |
-| `<leader>gg` | Open LazyGit |
-
-### File Navigation
-| Keybinding | Action |
-|------------|--------|
-| `<Tab>` | Next buffer |
-| `<S-Tab>` | Previous buffer |
-| `<leader>e` | Toggle NvimTree |
-| `<leader><space>` | View buffers (Telescope) |
+### Files & Buffers
+| Key | Action |
+|-----|--------|
+| `<leader>e` | Toggle file explorer |
+| `<leader><space>` | Telescope buffers |
 | `<leader>fg` | Grep in current file |
-| `<leader>a` | Harpoon add file |
-| `<leader>o` | Harpoon quick menu |
+| `<leader>a` | Harpoon: add file |
+| `<leader>o` | Harpoon: quick menu |
+| `<leader>1-4` | Harpoon: navigate to file 1-4 |
 
-### Editor Utilities
-| Keybinding | Action |
-|------------|--------|
-| `s` | Hop to anywhere |
+### Development
+| Key | Action |
+|-----|--------|
+| `<leader>cc` | Cargo run |
+| `<leader>cr` | Rustc compile & run |
+| `<leader>pc` | Python run |
+| `<leader>gp` | G++ compile & run |
+| `<leader>gc` | GCC compile & run |
+| `<leader>gg` | LazyGit |
+
+### Editor
+| Key | Action |
+|-----|--------|
 | `<leader>u` | UndoTree toggle |
 | `<leader>cx` | Make file executable |
-| `<C-u>` | Half page up + center |
-| `<C-d>` | Half page down + center |
-| `<leader>sv` | Split window vertically |
+| `<leader>sd` | Vertical split |
+| `<leader>st` | Terminal in vertical split |
 
 ### Clipboard
-| Keybinding | Action |
-|------------|--------|
+| Key | Action |
+|-----|--------|
 | `<leader>y` | Yank to system clipboard |
 | `<leader>d` | Delete without yanking |
-| `<leader>p` | Paste over (visual) |
+| `<leader>p` | Paste over (visual mode) |
+| `Ctrl+Shift+C/V` | System copy/paste |
 
-## Installation
+## Plugins
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/nvchad ~/.config/nvchad
+| Plugin | Purpose |
+|--------|---------|
+| nvterm | Integrated terminal |
+| harpoon | Quick file switching |
+| hop.nvim | Fast navigation (`s` key) |
+| conform.nvim | Code formatting |
+| undotree | Visual undo history |
+| lazygit | Git integration |
 
-# Run setup script
-chmod +x ~/nvchad/scripts/setup.sh
-./scripts/setup.sh
+## UI Settings
 
-# Start Neovim
-nvim
+- **Theme**: `rosepine` with `one_light` toggle
+- **Statusline**: VSCode colored with block separators
+- **Telescope**: Borderless style
+- **Dashboard**: Load on startup with quick actions
+- **Terminal**: 30% height horizontal, 45% width vertical
+
+## Options
+
+- Line numbers enabled, relative disabled
+- System clipboard integration
+- 5-line scroll offset
+- No line wrap
+- Incremental search, no highlight search
+
+## Neovide (GUI)
+
+- JetBrainsMono font at 11pt
+- 95% opacity
+- Cursor animation (0.2s)
+- Scroll animation (0.3s)
+- 60Hz refresh rate
+
+## Language Support
+
+**LSP/Treesitter**: Lua, Bash, Python, Rust, C, C++, JavaScript, TypeScript, HTML, CSS, JSON, YAML, Markdown, Go
+
+**Formatters**: `stylua` (Lua), `prettier` (HTML/CSS)
+
+## Structure
+
+```
+nvchad/lua/
+├── mappings.lua       # Keybindings
+├── chadrc.lua         # UI/theme config
+├── options.lua        # Neovim options
+├── autocmds.lua       # Autocommands
+├── plugins/init.lua   # Plugin specs
+└── configs/           # Plugin configs
+    ├── conform.lua    # Formatter setup
+    ├── harpoon.lua    # Harpoon keys
+    ├── hop.lua        # Hop navigation
+    ├── lspconfig.lua  # LSP setup
+    └── undotree.lua   # UndoTree config
 ```
 
-Or manually:
+## Install
 
 ```bash
 git clone https://github.com/yourusername/nvchad ~/.config/nvim
 nvim
 ```
 
-## Language Support
-
-Treesitter and LSP configured for:
-- Lua, Bash, Python, Rust, C, C++
-- JavaScript, TypeScript, TSX
-- HTML, CSS, TailwindCSS
-- Markdown, YAML, JSON
-- Go, Vim, SSH config
-
-Formatters: `stylua` (Lua), `prettier` (HTML/CSS/JS), `clang-format` (C/C++)
-
-## Structure
-
-```
-nvchad/
-├── lua/
-│   ├── autocmds.lua      # Autocommand definitions
-│   ├── chadrc.lua        # UI/theme configuration
-│   ├── mappings.lua      # Keybindings
-│   ├── options.lua       # Neovim options
-│   ├── configs/          # Plugin configurations
-│   │   ├── conform.lua
-│   │   ├── lazy.lua
-│   │   ├── lspconfig.lua
-│   │   ├── overrides.lua
-│   │   └── ...
-│   └── plugins/
-│       └── init.lua      # Plugin specifications
-├── scripts/
-│   └── setup.sh          # Installation script
-└── .stylua.toml          # Lua formatter config
-```
-
-## Configuration
-
-### Toggle Theme
-```vim
-:NvChadTheme <theme_name>
-```
-Built-in themes available: `ashes`, `one_light`
-
-### Modify Settings
-
-Edit `lua/chadrc.lua` to customize:
-- Theme, transparency, integrations
-- Statusline style and modules
-- Telescope style
-- Tabufline behavior
-- Dashboard options
-
-### Add Plugins
-
-Edit `lua/plugins/init.lua` to add new plugins in NvChad's structure.
-
 ## Requirements
 
 - Neovim 0.10+
-- ripgrep (for live grep)
-- LazyGit (optional, `<leader>gg`)
-- Deno (for peek.nvim markdown preview)
-
-## Credits
-
-- [NvChad](https://github.com/NvChad/NvChad) - The base configuration
-- All plugin authors
+- ripgrep (live grep)
+- LazyGit (optional)
