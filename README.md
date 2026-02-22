@@ -19,7 +19,7 @@ Personal Neovim config built on [NvChad](https://github.com/NvChad/NvChad).
 | `<leader>e` | Toggle file explorer |
 | `<leader><space>` | Telescope buffers |
 | `<leader>fg` | Grep in current file |
-| `<leader>fd` | Grep in project folder |
+| `<leader>fj` | Grep in project folder |
 | `<leader>a` | Harpoon: add file |
 | `<leader>o` | Harpoon: quick menu |
 | `<leader>1-4` | Harpoon: navigate to file 1-4 |
