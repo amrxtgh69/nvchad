@@ -41,6 +41,9 @@ Personal Neovim config built on [NvChad](https://github.com/NvChad/NvChad).
 | `<leader>cx` | Make file executable |
 | `<leader>sd` | Vertical split |
 | `<leader>st` | Terminal in vertical split |
+| `Ctrl+Left` / `Ctrl+Right` | Decrease/increase split width |
+| `Alt+h` / `Alt+l` | Decrease/increase split width (fallback) |
+| `Ctrl+w`, then `<` / `>` | Native split resize (press as a sequence) |
 
 ### Clipboard
 | Key | Action |
