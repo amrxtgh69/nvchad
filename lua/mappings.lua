@@ -33,6 +33,10 @@ map("i", "<C-S-v>", "<C-r>+", { desc = "Paste from system clipboard in insert mo
 -- Windows + splits
 map("n", "<leader>sd", "<C-w>v", { desc = "Split window vertically" })
 map("n", "<leader>st", "<cmd>vsplit | terminal<cr>", { desc = "Open terminal in vertical split" })
+map("n", "<C-Left>", "<cmd>vertical resize -3<cr>", { desc = "Decrease split width" })
+map("n", "<C-Right>", "<cmd>vertical resize +3<cr>", { desc = "Increase split width" })
+map("n", "<A-h>", "<cmd>vertical resize -3<cr>", { desc = "Decrease split width (Alt+h)" })
+map("n", "<A-l>", "<cmd>vertical resize +3<cr>", { desc = "Increase split width (Alt+l)" })
 
 -- Files + tree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
