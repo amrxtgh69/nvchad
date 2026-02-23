@@ -1,4 +1,4 @@
-# NvChad Configuration
+# NvChad Configuration(AI generated)
 
 Personal Neovim config built on [NvChad](https://github.com/NvChad/NvChad).
 
